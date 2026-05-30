@@ -14,7 +14,7 @@ return (
             <img src={assets.close_icon} alt="" className='w-5 absolute right-4 top-4 sm:hidden' onClick={() => setSideBarOpen(false)} />
             <a onClick = {()=>setSideBarOpen(false)} href="#" className='hover:text-primary transition-colors'>Home</a>
             <a onClick = {()=>setSideBarOpen(false)} href="#services" className='hover:text-primary transition-colors'>Services</a>
-            <a onClick = {()=>setSideBarOpen(false)} href="#OurWork" className='hover:text-primary transition-colors'>Our Work</a>
+            <a onClick={() => setSideBarOpen(false)} href="#our-work" className='hover:text-primary transition-colors'>Our Work</a>
             <a onClick = {()=>setSideBarOpen(false)} href="#contact-us" className='hover:text-primary transition-colors'>Contact Us</a>
     </div>
     
