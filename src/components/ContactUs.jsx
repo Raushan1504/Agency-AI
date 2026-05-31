@@ -2,13 +2,15 @@ import React, { useState } from 'react'
 import Title from './Title'
 import assets from '../assets/assets'
 import toast from 'react-hot-toast';
-
+import { motion } from 'framer-motion'
 const ContactUs = () => {
     const [result, setResult] = useState('')
+    const [isSending, setIsSending] = useState(false)
 
     const onSubmit = async (event) => {
         event.preventDefault()
-        setResult('Sending....')
+        setResult('Sending...')
+        setIsSending(true)
         const formData = new FormData(event.target)
 
         formData.append('access_key', '11aa62f6-ef55-4441-848a-e0acd2040555')
@@ -21,20 +23,38 @@ const ContactUs = () => {
 
             const data = await response.json()
 
-            if (data.success) {
-               toast.success('Message sent successfully!')
-               event.target.reset();
-            } else {
-               toast.error(data.message)
-            }
+                if (data.success) {
+                    toast.success('Message sent successfully!')
+                    event.target.reset();
+                    setResult('Message sent successfully!')
+                    setTimeout(() => setResult(''), 3500)
+                } else {
+                    toast.error(data.message)
+                    setResult(data.message || 'Failed to send message')
+                    setTimeout(() => setResult(''), 3500)
+                }
+                setIsSending(false)
         } catch (err) {
-            toast.error('error.message')
+                toast.error(err.message || 'An error occurred')
+                setResult(err.message || 'An error occurred')
+                setIsSending(false)
+                setTimeout(() => setResult(''), 3500)
         }
     }
-  return (
-    <div id = 'contact-us' className='flex flex-col items-center gap-7 px-4 sm:px-12 lg:px-2 xl:px-40 pt-30 text-gray-700 dark:text-white '>
+    return (
+        <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ staggerChildren: 0.2 }} id='contact-us' className='bg-white dark:bg-transparent'>
+            <div className='container mx-auto flex flex-col items-center gap-7 px-4 sm:px-6 lg:px-8 pt-12 text-gray-700 dark:text-white'>
         <Title title = 'Get in Touch' desc = 'Have a project in mind? We would love to hear from you. Contact us today to discuss how we can help bring your vision to life.' />
-        <form onSubmit={onSubmit} className='grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-2xl w-full'>
+                <motion.form
+                initial = {{opacity: 0, y: 30}}
+                whileInView = {{opacity: 1, y: 0}}
+                transition = {{duration: 0.5,delay : 0.2}}
+                viewport = {{ once: true }}
+                onSubmit={onSubmit} className='grid sm:grid-cols-2 gap-3 sm:gap-5 max-w-2xl w-full'>
             <div>
                   <p className  = 'mb-2 text-sm font-medium'>Your Name</p>
                   <div className='flex pl-3 rounded-lg border border-gray-200 dark:border-gray-600'>
@@ -56,14 +76,20 @@ const ContactUs = () => {
                 </div>
              </div>
 
-                 <button type='submit' className='w-max flex gap-2 bg-primary text-white text-sm px-10 py-3 rounded-full cursor-pointer hover:scale-105 transition-all'>
-                     Submit<img src={assets.arrow_icon} alt='send' className='w-4' />
+                <button
+                     type='submit'
+                     disabled={isSending}
+                     className={`w-max flex gap-2 bg-primary text-white text-sm px-10 py-3 rounded-full cursor-pointer hover:scale-105 transition-all ${isSending ? 'opacity-60 cursor-not-allowed hover:scale-100' : ''}`}
+                 >
+                     {isSending ? 'Sending...' : 'Submit'}
+                     <img src={assets.arrow_icon} alt='send' className='w-4' />
                  </button>
                 {result && <p className='sm:col-span-2 mt-2 text-sm text-center'>{result}</p>}
             
 
-        </form>
-    </div>
+                </motion.form>
+            </div>
+        </motion.div>
   )
 
 }
