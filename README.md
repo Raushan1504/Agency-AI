@@ -1,86 +1,59 @@
 # 🚀 Agency.AI — Digital Agency Landing Page
 
-A modern, responsive landing page for a digital agency built with **React**, **Vite**, and **Tailwind CSS v4**. Features smooth scroll-triggered animations, dark/light theme toggle, a working contact form, and a fully responsive mobile navigation.
+A sleek, fully responsive digital agency landing page built with **React 19**, **Vite**, and **Tailwind CSS v4** — featuring scroll-triggered animations, dark/light theme toggle, and a working contact form.
 
-![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green)
+---
+
+## 🔗 Live Demo
+
+👉 [**View Live**](https://agency-ai-one-mu.vercel.app/)
+
+<!-- Replace the URL above with your actual Vercel deployment link -->
+
+---
+
+## 📸 Screenshots
+
+### 🌞 Light Mode
+
+![Light Mode - Hero Section](light-hero.png)
+![Light Mode - Services Section](light-services.png)
+
+### 🌙 Dark Mode
+
+![Dark Mode - Hero Section](dark-hero.png)
+![Dark Mode - Contact Section](dark-contact.png)
 
 ---
 
 ## ✨ Features
 
-- **Hero Section** — Eye-catching headline with gradient text and animated entrance
-- **Trusted By** — Logo carousel showcasing partner brands (Google, Airbnb, Zoom, etc.)
-- **Services** — Four service cards (Advertising, Content Marketing, Content Writing, Social Media) with staggered animations
-- **Our Work** — Portfolio showcase with project previews
-- **Team** — Meet the team section
-- **Contact Form** — Fully functional contact form powered by [Web3Forms](https://web3forms.com/) with toast notifications
-- **Dark / Light Theme** — Toggle between themes with state persisted in `localStorage`
-- **Smooth Animations** — Scroll-triggered animations using [Motion (Framer Motion)](https://motion.dev/)
-- **Responsive Design** — Fully responsive with mobile hamburger menu
-- **Smooth Scrolling** — Anchor navigation with CSS `scroll-smooth`
+- 🎨 **Dark / Light Theme** — Seamless toggle with state persisted in `localStorage`
+- 🎬 **Scroll Animations** — Smooth entrance effects using Motion (Framer Motion)
+- 📱 **Fully Responsive** — Mobile-first design with hamburger navigation on small screens
+- 📩 **Working Contact Form** — Powered by Web3Forms with real-time toast notifications
+- 🏢 **Trusted By Section** — Brand logo showcase (Google, Airbnb, Zoom, Microsoft, etc.)
+- 🛠️ **Services Grid** — Animated service cards for Advertising, Content Marketing, Writing & Social Media
+- 💼 **Portfolio Showcase** — "Our Work" section with project previews
+- 👥 **Team Section** — Meet the team display
+- 🧭 **Smooth Scroll Navigation** — Anchor-based section jumping with CSS `scroll-smooth`
+- 🔝 **Sticky Navbar** — Glassmorphism navbar with backdrop blur
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Technology | Version | Purpose |
-|---|---|---|
-| [React](https://react.dev/) | 19 | UI library |
-| [Vite](https://vite.dev/) | 8 | Build tool & dev server |
-| [Tailwind CSS](https://tailwindcss.com/) | 4 | Utility-first CSS framework |
-| [Motion](https://motion.dev/) | 12 | Scroll-triggered animations |
-| [React Hot Toast](https://react-hot-toast.com/) | 2 | Toast notifications |
-| [Web3Forms](https://web3forms.com/) | — | Contact form backend |
+| Technology | Purpose |
+|---|---|
+| ![React](https://img.shields.io/badge/React_19-61DAFB?logo=react&logoColor=black) | UI components |
+| ![Vite](https://img.shields.io/badge/Vite_8-646CFF?logo=vite&logoColor=white) | Build tool & dev server |
+| ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS_4-06B6D4?logo=tailwindcss&logoColor=white) | Utility-first styling |
+| ![Motion](https://img.shields.io/badge/Motion-FF4154?logo=framer&logoColor=white) | Scroll-triggered animations |
+| ![Web3Forms](https://img.shields.io/badge/Web3Forms-0055FF?logoColor=white) | Contact form backend |
 
 ---
 
-## 📁 Project Structure
-
-```
-AI_AGENECY/
-├── public/
-│   └── favicon.ico
-├── src/
-│   ├── assets/              # Images, icons, logos, and asset index
-│   │   ├── assets.js        # Central asset exports
-│   │   ├── logo.svg
-│   │   ├── hero_img.png
-│   │   └── ...
-│   ├── components/
-│   │   ├── Navbar.jsx       # Sticky navbar with mobile sidebar
-│   │   ├── Hero.jsx         # Hero section with CTA
-│   │   ├── TrustedBy.jsx    # Brand logo carousel
-│   │   ├── Services.jsx     # Services grid
-│   │   ├── ServiceCard.jsx  # Individual service card
-│   │   ├── OurWork.jsx      # Portfolio section
-│   │   ├── Teams.jsx        # Team members section
-│   │   ├── ContactUs.jsx    # Contact form (Web3Forms)
-│   │   ├── Footer.jsx       # Site footer
-│   │   ├── Title.jsx        # Reusable section title
-│   │   └── ThemeToggleBtn.jsx # Dark/Light toggle button
-│   ├── App.jsx              # Main app component
-│   ├── main.jsx             # Entry point
-│   └── index.css            # Global styles + Tailwind config
-├── index.html               # HTML entry point
-├── vite.config.js           # Vite configuration
-├── package.json
-├── eslint.config.js
-└── .gitignore
-```
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- **Node.js** ≥ 18.x
-- **npm** ≥ 9.x (or **yarn** / **pnpm**)
-
-### Installation
+## 🧑‍💻 Installation
 
 1. **Clone the repository**
 
@@ -95,142 +68,66 @@ AI_AGENECY/
    npm install
    ```
 
-3. **Start the development server**
+3. **Start the dev server**
 
    ```bash
    npm run dev
    ```
 
-4. **Open in browser**
+4. **Open** `http://localhost:5173` in your browser.
 
-   Navigate to `http://localhost:5173` (default Vite port).
+### Other Commands
 
-### Available Scripts
-
-| Command | Description |
-|---|---|
-| `npm run dev` | Start local dev server with HMR |
-| `npm run build` | Build production bundle to `dist/` |
-| `npm run preview` | Preview production build locally |
-| `npm run lint` | Run ESLint checks |
-
----
-
-## 🌐 Deploy to Vercel
-
-### Option 1: Deploy via Vercel Dashboard (Recommended)
-
-1. **Push your code to GitHub**
-
-   ```bash
-   git add .
-   git commit -m "ready for deployment"
-   git push origin main
-   ```
-
-2. **Go to [vercel.com](https://vercel.com)** and sign in with your GitHub account.
-
-3. **Click "Add New..." → "Project"**
-
-4. **Import your GitHub repository** — Search for `Agency-AI` (or `AI_AGENECY`) and click **Import**.
-
-5. **Configure the project** — Vercel auto-detects Vite. Verify these settings:
-
-   | Setting | Value |
-   |---|---|
-   | **Framework Preset** | Vite |
-   | **Build Command** | `npm run build` |
-   | **Output Directory** | `dist` |
-   | **Install Command** | `npm install` |
-
-6. **Click "Deploy"** — Vercel will build and deploy your site. You'll get a live URL like `https://agency-ai-xxxx.vercel.app`.
-
-7. **(Optional) Add a custom domain** — Go to **Settings → Domains** and add your domain.
-
----
-
-### Option 2: Deploy via Vercel CLI
-
-1. **Install the Vercel CLI**
-
-   ```bash
-   npm install -g vercel
-   ```
-
-2. **Login to Vercel**
-
-   ```bash
-   vercel login
-   ```
-
-3. **Deploy from the project root**
-
-   ```bash
-   vercel
-   ```
-
-   Follow the prompts:
-   - **Set up and deploy?** → `Y`
-   - **Which scope?** → Select your account
-   - **Link to existing project?** → `N` (for first deploy)
-   - **Project name?** → `agency-ai` (or your preferred name)
-   - **Directory?** → `./`
-   - **Override settings?** → `N` (Vercel auto-detects Vite)
-
-4. **Deploy to production**
-
-   ```bash
-   vercel --prod
-   ```
-
----
-
-### Fix: Favicon Path for Vercel
-
-> [!IMPORTANT]
-> The current `index.html` references the favicon as `/public/favicon.ico`. On Vercel (and Vite builds in general), files in the `public/` folder are served from the root. Update the path to `/favicon.ico`:
-
-```html
-<!-- Before -->
-<link rel="icon" type="image/svg+xml" href="/public/favicon.ico" />
-
-<!-- After -->
-<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+```bash
+npm run build     # Build for production
+npm run preview   # Preview production build
+npm run lint      # Run ESLint
 ```
 
 ---
 
-## ⚙️ Environment Notes
+## 🔐 Environment Variables
 
-- **Contact Form**: The contact form uses [Web3Forms](https://web3forms.com/) with a hardcoded access key. For production, consider moving the key to an environment variable:
+To run this project, add the following environment variable to a `.env` file in the project root:
 
-  1. Create a `.env` file in the project root:
-     ```
-     VITE_WEB3FORMS_KEY=your_access_key_here
-     ```
-  2. Reference it in `ContactUs.jsx`:
-     ```js
-     formData.append('access_key', import.meta.env.VITE_WEB3FORMS_KEY)
-     ```
-  3. Add the environment variable in **Vercel Dashboard → Settings → Environment Variables**.
+```env
+VITE_WEB3FORMS_KEY=your_web3forms_access_key
+```
+
+| Variable | Description | Required |
+|---|---|---|
+| `VITE_WEB3FORMS_KEY` | Your [Web3Forms](https://web3forms.com/) access key for the contact form | Yes |
+
+> Get your free access key at [web3forms.com](https://web3forms.com/)
+
+Then update `src/components/ContactUs.jsx`:
+
+```js
+formData.append('access_key', import.meta.env.VITE_WEB3FORMS_KEY)
+```
+
+If deploying to **Vercel**, add the variable in **Settings → Environment Variables**.
 
 ---
 
-## 🎨 Customization
+## 🧠 What I Learned
 
-- **Theme Colors**: Edit `--color-primary` in [`src/index.css`](src/index.css) to change the brand color.
-- **Fonts**: The project uses [Manrope](https://fonts.google.com/specimen/Manrope) from Google Fonts.
-- **Animations**: Animation configs are inline in each component using Motion's `initial`, `whileInView`, and `transition` props.
+Building Agency.AI taught me several key concepts:
+
+- **Tailwind CSS v4** — Worked with the latest version including `@theme` directives for custom design tokens, `@custom-variant` for dark mode, and the new `@tailwindcss/vite` plugin integration.
+- **Framer Motion (Motion)** — Implemented `whileInView` scroll-triggered animations with staggered children, giving the page a polished, professional feel without heavy JS.
+- **Dark Mode Architecture** — Built a theme system that toggles a `.dark` class on `<html>`, persists user preference in `localStorage`, and uses Tailwind's `dark:` variant throughout the entire UI.
+- **Web3Forms Integration** — Set up a serverless contact form that works without a backend — handling loading states, success/error toasts, and form resets.
+- **Responsive Navigation** — Created a mobile sidebar that overlays on small screens and collapses into the inline navbar on larger breakpoints using Tailwind's responsive utilities.
+- **Vite Build Pipeline** — Gained experience with Vite 8's fast HMR, plugin ecosystem, and production build optimizations for deployment on Vercel.
 
 ---
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-<p align="center">
-  Built with ❤️ by <a href="https://github.com/Raushan1504">Raushan</a>
-</p>
+<p align="center">Built with ❤️ by <a href="https://github.com/Raushan1504">Raushan</a></p>
 
